@@ -9,9 +9,7 @@ void input(int *arr,int n){
         scanf("%d",&arr[i]);
     }
 }
-
 void linearSearch(int *arr,int n,int key){
-    
     int comprarisons = 0;
     int flag=-1;
     for(int i=0;i<n;i++){
@@ -28,9 +26,7 @@ void linearSearch(int *arr,int n,int key){
         printf("Not Present %d",key);
     }
     printf("\nTotal No Of Comparisons: %d\n",comprarisons);
-    
 }
-
 int main(){
     int arr[100],n,testCases,key;
     printf("Enter No of Test Cases:\n");
@@ -47,7 +43,6 @@ int main(){
         printf("\nOUTPUT\n");
         linearSearch(arr,n,key);
         printf("\n");
-
     }
     return 0;
 }

@@ -46,13 +46,17 @@ void insertionSort(int *arr, int n)
 }
 int main()
 {
-    int arr[100], n, key;
-    printf("Enter size of array: ");
-    scanf("%d", &n);
-    printf("Enter Array Element: ");
-    input(arr, n);
+    int arr[100], n, key,t;
+    printf("Enter test Cases:\n");
+    scanf("%d", &t);
+    while(t--){
+        printf("Enter size of array: ");
+        scanf("%d", &n);
+        printf("Enter Array Element: ");
+        input(arr, n);
+        insertionSort(arr,n);
+    }
     
-    insertionSort(arr,n);
     
 
     return 0;

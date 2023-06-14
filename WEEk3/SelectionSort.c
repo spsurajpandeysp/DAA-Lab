@@ -2,27 +2,21 @@
 array using selection sort. Your program should also find number of comparisons and number of
 swaps required.*/
 #include <stdio.h>
-void input(int *arr, int n)
-{
-    for (int i = 0; i < n; i++)
-    {
+void input(int *arr, int n){
+    for (int i = 0; i < n; i++){
         scanf("%d", &arr[i]);
     }
 }
-void display(int *arr, int n)
-{
-    for (int i = 0; i < n; i++)
-    {
+void display(int *arr, int n){
+    for (int i = 0; i < n; i++){
         printf("%d ", arr[i]);
     }
     printf("\n");
 }
-void selectionSort(int *arr, int n)
-{
+void selectionSort(int *arr, int n){
     int comp=0;
     int swap = 0;
-    for(int i = 0; i < n - 1; i++)
-    {
+    for(int i = 0; i < n - 1; i++){
         int min=i;
         for(int j=i+1;j<n;j++){
             comp++;
@@ -42,15 +36,16 @@ void selectionSort(int *arr, int n)
     printf("Total no of comparisons are:%d\n",comp);
     printf("Total number of swap are:%d\n",swap);
 }
-int main()
-{
-    int arr[100], n, key;
-    printf("Enter size of array: ");
-    scanf("%d", &n);
-    printf("Enter Array Element: ");
-    input(arr, n);
-    selectionSort(arr,n);
-    
-
+int main(){
+    int arr[100], n, key,t;
+    printf("Enter Number of test cases:\n");
+    scanf("%d",&t);
+    while(t--){
+        printf("Enter size of array: ");
+        scanf("%d", &n);
+        printf("Enter Array Element: ");
+        input(arr, n);
+        selectionSort(arr,n);
+    }
     return 0;
 }

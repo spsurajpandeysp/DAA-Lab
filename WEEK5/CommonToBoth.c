@@ -47,15 +47,11 @@ int main(){
     printf("Enter Element first array:\n");
     input(arr1,m);
     BubbleSort(arr1,m);
-    printf("First Array Element are:\n");
-    display(arr1,m);
     printf("Enter size of First array:\n");
     scanf("%d",&n);
     printf("Enter Element of second array:\n");
     input(arr2,n);
     BubbleSort(arr2,n);
-    printf("Second Array Element are:\n");
-    display(arr2,n);
     printf("Common Element are:\n");
     commonElement(arr1,m,arr2,n);
     return 0;

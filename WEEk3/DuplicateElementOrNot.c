@@ -4,23 +4,10 @@ program to find whether there are any duplicate elements in the array or not. (u
 Complexity = O(n log n))
 */
 #include <stdio.h>
-void input(int *arr, int n)
-{
-    for (int i = 0; i < n; i++)
-    {
+void input(int *arr, int n){
+    for (int i = 0; i < n; i++){
         scanf("%d", &arr[i]);
     }
-}
-void display(int *arr, int n)
-{
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
-void merge(){
-
 }
 void mergeArray(int *arr,int lb,int mid,int ub){
     int l2 = ub-mid;
@@ -71,15 +58,17 @@ void findDuplicateEle(int *arr,int n){
         }
     }
     printf("NO:\n");
-
 }
-int main()
-{
-    int arr[100], n, key;
-    printf("Enter size of array: ");
-    scanf("%d", &n);
-    printf("Enter Array Element: ");
-    input(arr, n);
-    findDuplicateEle(arr,n);
+int main(){
+    int arr[100], n, key,t;
+    printf("Enter Number of test case:\n");
+    scanf("%d",&t);
+    while(t--){
+         printf("Enter size of array: ");
+        scanf("%d", &n);
+        printf("Enter Array Element: ");
+        input(arr, n);
+        findDuplicateEle(arr,n);
+    }
     return 0;
 }

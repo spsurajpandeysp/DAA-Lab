@@ -26,10 +26,7 @@ void mergeArray(int *arr,int lb,int mid,int ub){
     for(int i=0;i<l2;i++){
         R[i]=arr[mid+i+1];
     }
-    
-    int  i= 0;
-    int j=0;
-    int k = lb;
+    int  i= 0,j=0,k=lb;
     while(i<l1 && j<l2){
         comparison++;
         if(L[i]<=R[j]){
@@ -42,13 +39,10 @@ void mergeArray(int *arr,int lb,int mid,int ub){
         }
         k++;
     }
-    
     while(i<l1){
-        
         arr[k++]=L[i++];
     }
     while(j<l2){
-        
         arr[k++]=R[j++];
     }
 }
@@ -61,16 +55,20 @@ void mergeSort(int *arr,int lb,int ub){
     }
 }
 int main(){
-    int arr[100],n;
-    printf("Enter size of array:\n");
-    scanf("%d",&n);
-    printf("Enter array element:\n");
-    input(arr,n);
-    printf("Array element before sorting:\n");
-    display(arr,n);
-    mergeSort(arr,0,n-1);
-    printf("Array element after sorting:\n");
-    display(arr,n);
-    printf("Total Number of copmarison: %d",comparison);
+    int arr[100],n,t;
+    printf("Enter Number of test cases\n");
+    scanf("%d",&t);
+    while(t--){
+        comparison=0;
+        printf("Enter size of array:\n");
+        scanf("%d",&n);
+        printf("Enter array element:\n");
+        input(arr,n);
+        mergeSort(arr,0,n-1);
+        printf("Array element after sorting:\n");
+        display(arr,n);
+        printf("Total Number of copmarison: %d",comparison);
+        printf("\n");
+    }
     return 0;
 }

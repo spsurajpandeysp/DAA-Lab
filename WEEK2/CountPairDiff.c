@@ -49,6 +49,5 @@ int main()
     scanf("%d", &key);
     int c = countPairDiff(arr, n, key);
     printf("Total Number of pair are: %d\n", c);
-
     return 0;
 }

@@ -7,12 +7,6 @@ void input(int *arr,int n){
         scanf("%d",&arr[i]);
     }
 }
-void display(int *arr,int n){
-    for(int i=0;i<n;i++){
-        printf("%d ",arr[i]);
-    }
-    printf("\n");
-}
 void mergeArray(int *arr,int lb,int mid,int ub){
     int l1 = mid-lb+1;
     int l2 = ub-mid;
@@ -69,40 +63,30 @@ int binarySeach(int *arr,int n,int key){
     }
     return -1; 
 }
-// Time Complexity is O(n^2)
-/*void twoSum(int *arr,int n ,int key){
-    for(int i=0;i<n;i++){
-        for(int j=i+1;j<n;j++){
-            if(arr[j]+arr[i]==key){
-                printf("Two sum index are: %d  %d\n",i,j);
-                return ;
-            }
-        }
-    }
-    printf("Two Sum not equal to key:\n");
-}*/
 void twoSum(int *arr,int n ,int key){
     mergeSort(arr,0,n-1);
-    display(arr,n);
     int c;
     for(int i=0;i<n;i++){
         if((c=binarySeach(arr,n,key-arr[i]))>=0){
-            printf("Numbers are: %d - %d\n",arr[i],arr[c]);
+            printf("Numbers are: %d  %d\n",arr[i],arr[c]);
             return ;
         }
     }
     printf("No Such Element Exist:\n");
 }
 int main(){
-    int arr[100],n,key;
-    printf("Enter size of array:\n");
-    scanf("%d",&n);
-    printf("Enter array Element:\n");
-    input(arr,n);
-    printf("Array Element are:\n");
-    display(arr,n);
-    printf("Enter key:\n");
-    scanf("%d",&key);
-    twoSum(arr,n,key);
+    int arr[100],n,key,t;
+    printf("Enter Number of test cases:\n");
+    scanf("%d",&t);
+    while(t--){
+        printf("Enter size of array:\n");
+        scanf("%d",&n);
+        printf("Enter array Element:\n");
+        input(arr,n);
+        printf("Enter key:\n");
+        scanf("%d",&key);
+        twoSum(arr,n,key);
+        printf("\n");
+    }
     return 0;
 }

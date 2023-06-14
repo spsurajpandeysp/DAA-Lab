@@ -9,13 +9,7 @@ void input(int *arr,int n){
         scanf("%d",&arr[i]);
     }
 }
-void display(int *arr,int n){
-    for(int i=0;i<n;i++){
-        printf("%d ",arr[i]);
-    }
-    printf("\n");
-}
-void kthLargestAndKthsmallest(int *arr,int n,int kthLar,int Kthsmall){
+void kthLargestAndKthsmallest(int *arr,int n,int kth){
     int max = arr[0];
     for(int i=0;i<n;i++){
         if(max<arr[i]){
@@ -40,21 +34,22 @@ void kthLargestAndKthsmallest(int *arr,int n,int kthLar,int Kthsmall){
     for(int i=0;i<n;i++){
         arr[i]=ans[i];
     }
-    printf("Kth Largest value is: %d\n",arr[n-kthLar]);
-    printf("Kth smallest value is: %d\n",arr[Kthsmall-1]);
+    printf("Kth Largest value is: %d\n",arr[n-kth]);
+    printf("Kth smallest value is: %d\n",arr[kth-1]);
 }
 int main(){
-    int arr[100],n,kthLar,kthSmall;
-    printf("Enter size of array:\n");
-    scanf("%d",&n);
-    printf("Enter array element:\n");
-    input(arr,n);
-    printf("Array element before sorting:\n");
-    display(arr,n);
-    printf("Enter Kth Largest: \n");
-    scanf("%d",&kthLar);
-    printf("Enter Kth Smallest: \n");
-    scanf("%d",&kthSmall);
-    kthLargestAndKthsmallest(arr,n,kthLar,kthSmall);
+    int arr[100],n,kth,t;
+    printf("Enter No Of test cases:\n");
+    scanf("%d",&t);
+    while(t--){
+        printf("Enter size of array:\n");
+        scanf("%d",&n);
+        printf("Enter array element:\n");
+        input(arr,n);
+        printf("Enter K value: \n");
+        scanf("%d",&kth);
+        kthLargestAndKthsmallest(arr,n,kth);
+    }
+    
     return 0;
 }
