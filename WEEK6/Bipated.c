@@ -18,12 +18,12 @@ void BFS(int start,int vertices){
     int queue[MAX] ,rear=-1,front =-1;
     queue[++rear] = start;
     front++;
+    color[start]=1;
     while(front<=rear){
         int current = queue[front++];
         for(int i=0;i<vertices;i++){
             if(graph[current][i] && color[i]==-1){
                 color[i]=1-color[current];
-              
                 queue[++rear]=i;
             }
             else if(graph[current][i] && color[i]==color[current]){

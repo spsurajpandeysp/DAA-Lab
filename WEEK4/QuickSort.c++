@@ -40,14 +40,18 @@ int partition(int *arr,int lb,int ub){
     arr[ub]=temp;
     return i;
 }
+int partitionRand(int *arr,int lb,int ub){
+    int r= lb + rand() % (ub - lb);
+    swap(arr[r],arr[ub]);
+    return partition(arr,lb,ub);
+}
 void quickSort(int *arr,int lb,int ub){
     if(lb<ub){
-        int pivot = partition(arr,lb,ub);
+        int pivot = partitionRand(arr,lb,ub);
         quickSort(arr,lb,pivot-1);
         quickSort(arr,pivot+1,ub);
     }
 }
-
 int main(){
     int arr[100],n,t;
     cout<<"Enter Number of test cases:"<<endl;
@@ -64,6 +68,5 @@ int main(){
         printf("Swap: %d\n",swaps);
         printf("Comparisons:%d\n",comparisons);
     }
-    
     return 0;
 }

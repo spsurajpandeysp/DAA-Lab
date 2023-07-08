@@ -7,23 +7,6 @@ void input(int *arr,int n){
         scanf("%d",&arr[i]);
     }
 }
-void display(int *arr,int n){
-    for(int i=0;i<n;i++){
-        printf("%d ",arr[i]);
-    }
-    printf("\n");
-}
-void BubbleSort(int *arr,int n){
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n-i-1;j++){
-            if(arr[j]>arr[j+1]){
-                int temp = arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
-            }
-        }
-    }
-}
 void commonElement(int *arr1,int m,int *arr2,int n){
     int i=0;
     int j=0;
@@ -51,7 +34,6 @@ int main(){
     scanf("%d",&n);
     printf("Enter Element of second array:\n");
     input(arr2,n);
-    BubbleSort(arr2,n);
     printf("Common Element are:\n");
     commonElement(arr1,m,arr2,n);
     return 0;

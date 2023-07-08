@@ -1,7 +1,5 @@
-/*Given an array of characters, you have to find distinct characters from this array. Design an
-algorithm and implement it using a program to solve this problem using hashing. (Time
-Complexity = O(n))*/
-
+/*III. Given a string of characters, design an algorithm and implement it using a program to print all
+possible permutations of the string in lexicographic order.*/
 #include<bits/stdc++.h>
 using namespace std;
 void allPermutation(string str,vector<string> &ans,int n,int i){

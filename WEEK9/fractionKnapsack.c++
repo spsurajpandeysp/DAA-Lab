@@ -10,31 +10,31 @@ void takeInput(int n,int arr[]){
         cin>>arr[i];
     }
 }
-bool cmp(pair<double,pair<int,pair<int,int>>> a,pair<double,pair<int,pair<int,int>>> b){
-    return a.first>b.first;
+bool cmp(vector<double> a,vector<double> b){
+    return a[0]>b[0];
 }
 vector<pair<int,int>> it_wt;
 double fractionalKnapsack(int n,int weight[],int value[],int knapCap){
-    vector<pair<double,pair<int,pair<int,int>>>> item;
+    vector<vector<double>> item(n,vector<double> (4));
     for(int i=0;i<n;i++){
         double perUnitValue = (1.0*value[i])/weight[i];
-        item.push_back(make_pair(perUnitValue,make_pair(i+1,make_pair(value[i],weight[i]))));
+        item[i][0]=perUnitValue;
+        item[i][1]=i+1;
+        item[i][2]=value[i];
+        item[i][3]=weight[i];
     }
     sort(item.begin(),item.end(),cmp);
-    /*for(int i=0;i<n;i++){
-        cout<<item[i].first<<" "<<item[i].second.first<<" "<<item[i].second.second<<endl;
-    }*/
     double totalValue =0;
     for(int i=0;i<n;i++){
-        if(item[i].second.second.second>knapCap){
-            totalValue = totalValue+knapCap*item[i].first;
-            it_wt.push_back(make_pair(item[i].second.first,item[i].first));
+        if(item[i][3]>knapCap && knapCap!=0){
+            it_wt.push_back(make_pair(item[i][1],knapCap));
+            totalValue+=knapCap*item[i][0];
             break;
         }
         else{
-            totalValue = totalValue+item[i].second.second.first;
-            knapCap = knapCap - item[i].second.second.second;
-            it_wt.push_back(make_pair(item[i].second.first,item[i].second.second.second));
+            totalValue +=item[i][2];
+            knapCap = knapCap - item[i][3];
+            it_wt.push_back(make_pair(item[i][1],item[i][3]));
         }
     }
     return totalValue;
@@ -56,9 +56,6 @@ int main(){
     for(int i=0;i<it_wt.size();i++){
         cout<<it_wt[i].first<<"-"<<it_wt[i].second<<endl;
     }
-
-    
     return 0;
-
 }
 

@@ -3,41 +3,23 @@ Given an array of nonnegative integers, design an algorithm and a program to cou
 of pairs of integers such that their difference is equal to a given key, K.
 */
 #include <stdio.h>
-void input(int *arr, int n)
-{
-    for (int i = 0; i < n; i++)
-    {
+void input(int *arr, int n){
+    for (int i = 0; i < n; i++){
         scanf("%d", &arr[i]);
     }
 }
-void display(int *arr, int n)
-{
-    for (int i = 0; i < n; i++){
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
-
 int countPairDiff(int *arr, int n, int key){
     int count = 0;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = i + 1; j < n; j++)
-        {
+    for (int i = 0; i < n; i++){
+        for (int j = i + 1; j < n; j++){
             int diff = arr[i] - arr[j];
-            if (diff >= 0 && diff == key)
-            {
-                count++;
-            }
-            else if (diff < 0 && diff == -key)
-            {
+            if (diff == key || diff == -key){
                 count++;
             }
         }
     }
     return count;
 }
-
 int main()
 {
     int arr[100], n, key;

@@ -14,15 +14,12 @@ void selectTask(int *time, int *deadline, int n){
     vector<pair<int, int>> v;
     for (int i = 0; i < n; i++){
         v.push_back(make_pair(deadline[i],i));
-        
-    
     }
     sort(v.begin(), v.end());
     res.push_back(v[0].second + 1);
     int temp = time[v[0].second];
     for (int i = 1; i < n; i++){
         if (deadline[v[i].second] - temp >= time[v[i].second]){
-           
             res.push_back(v[i].second + 1);
             temp += time[v[i].second];
         }

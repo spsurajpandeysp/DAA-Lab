@@ -19,7 +19,6 @@ void createAdjMatrix(int vertices){
         }
     }
 }
-
 void printShortestPathMatrix(int vertices ){
     for(int i=0;i<vertices;i++){
         for(int j=0;j<vertices;j++){

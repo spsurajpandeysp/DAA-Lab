@@ -12,19 +12,7 @@ void input(int *arr,int n){
         scanf("%d",&arr[i]);
     }
 }
-void bubbleSort(int *arr,int n){
-    for(int i=0;i<n-1;i++){
-        for(int j=0;j<n-i-1;j++){
-            if(arr[j]>arr[j+1]){
-                int temp = arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
-            }
-        }
-    }
-}
 void jumpSearch(int *arr,int n,int key){
-    bubbleSort(arr,n);
     int comprarisons = 0,flag=-1,start=0,end,jump = sqrt(n);
     end=jump;
     while(arr[end]<=key && end<n){

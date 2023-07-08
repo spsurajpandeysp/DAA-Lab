@@ -12,7 +12,7 @@ void majorityElement(int *arr,int n){
     int ansIndex = 0;
     int count =1;
     for(int i=1;i<n;i++){
-        if(arr[ansIndex]=arr[i]){
+        if(arr[ansIndex]==arr[i]){
             count++;
         }
         else{
@@ -36,7 +36,6 @@ void majorityElement(int *arr,int n){
     else{
         cout<<"No"<<endl;
     }
-
 }
 int main(){
     int n,arr[100];

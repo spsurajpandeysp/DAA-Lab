@@ -7,26 +7,6 @@ using namespace std;
 #define MAX 100
 int c[MAX][MAX];
 char b[MAX][MAX];
-void displayDirection(int n,int m){
-    cout<<"Direction Matrix:"<<endl;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=m;j++){
-            cout<<b[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-    cout<<endl;
-}
-void displayValue(int n,int m){
-    cout<<"Value Matrix:"<<endl;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=m;j++){
-            cout<<c[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-    cout<<endl;
-}
 void LCS(string s1,string s2){
     int n = s1.length();
     int m = s2.length();
@@ -39,7 +19,7 @@ void LCS(string s1,string s2){
         b[0][i]='0';
     }
     for(int i=1;i<=n;i++){
-        for(int j=0;j<=m;j++){
+        for(int j=1;j<=m;j++){
             if(s1[i-1]==s2[j-1]){
                 c[i][j]  =c[i-1][j-1]+1;
                 b[i][j] = 'D';

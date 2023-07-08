@@ -11,24 +11,25 @@ void input(int *arr,int n){
         cin>>arr[i];
     }
 }
-bool cmp(pair<int,pair<int,int>> a,pair<int,pair<int,int>> b){
-    return a.second.second<b.second.second;
+bool cmp(vector<int> a,vector<int> b){
+    return a[2]<b[2];
 }
 vector<int> selectedActivity;
 int numOfSelectedActivity(int *start,int *end,int n){
-    vector<pair<int,pair<int,int>>> vp;
+    vector<vector<int>> vt(n,vector<int> (3));
     for(int i=0;i<n;i++){
-        vp.push_back(make_pair(i+1,make_pair(start[i],end[i])));
+        vt[i][0]=i+1;
+        vt[i][1]=start[i];
+        vt[i][2]=end[i];
     }
-    sort(vp.begin(),vp.end(),cmp);
-
-    int endTime = vp[0].second.second;
-    selectedActivity.push_back(vp[0].first);
+    sort(vt.begin(),vt.end(),cmp);
+    int endTime = vt[0][2];
+    selectedActivity.push_back(vt[0][0]);
     int count=1;
     for(int i=0;i<n;i++){
-        if(vp[i].second.first>=endTime){
-            selectedActivity.push_back(vp[i].first);
-            endTime=vp[i].second.second;
+        if(vt[i][1]>=endTime){
+            selectedActivity.push_back(vt[i][0]);
+            endTime=vt[i][2];
             count++;
         }
     }

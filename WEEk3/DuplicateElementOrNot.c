@@ -17,12 +17,10 @@ void mergeArray(int *arr,int lb,int mid,int ub){
     for(int i=0;i<l1;i++){
         L[i]=arr[i+lb];
     }
-    for(int i=0;i<l1;i++){
+    for(int i=0;i<l2;i++){
         R[i]=arr[i+mid+1];
     }
-    int k = lb;
-    int i=0;
-    int j=0;
+    int k = lb,i=0,j=0;
     while(i<l1 && j<l2){
         if(L[i]<R[j]){
             arr[k++]=L[i++];
@@ -64,7 +62,7 @@ int main(){
     printf("Enter Number of test case:\n");
     scanf("%d",&t);
     while(t--){
-         printf("Enter size of array: ");
+        printf("Enter size of array: ");
         scanf("%d", &n);
         printf("Enter Array Element: ");
         input(arr, n);

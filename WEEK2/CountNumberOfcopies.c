@@ -7,25 +7,7 @@ void input(int *arr,int n){
         scanf("%d",&arr[i]);
     }
 }
-void display(int *arr,int n){
-    for(int i=0;i<n;i++){
-        printf("%d ",arr[i]);
-    }
-    printf("\n");
-}
-void bubbleSort(int *arr,int n){
-    for(int i=0;i<n-1;i++){
-        for(int j=0;j<n-i-1;j++){
-            if(arr[j]>arr[j+1]){
-                int temp = arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=temp;
-            }
-        }
-    }
-}
 int countCopies(int *arr,int n,int key,int mode){
-    bubbleSort(arr,n);
     int lb=0,ub=n-1;
     int ans=-1;
     while(lb<=ub){

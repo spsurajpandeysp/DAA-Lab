@@ -5,27 +5,21 @@ total number of times the array elements are shifted from their place) required 
 array.
 */
 #include <stdio.h>
-void input(int *arr, int n)
-{
-    for (int i = 0; i < n; i++)
-    {
+void input(int *arr, int n){
+    for (int i = 0; i < n; i++){
         scanf("%d", &arr[i]);
     }
 }
-void display(int *arr, int n)
-{
-    for (int i = 0; i < n; i++)
-    {
+void display(int *arr, int n){
+    for (int i = 0; i < n; i++){
         printf("%d ", arr[i]);
     }
     printf("\n");
 }
-void insertionSort(int *arr, int n)
-{
+void insertionSort(int *arr, int n){
     int comp=0;
     int shift = 0;
-    for (int i = 0; i < n - 1; i++)
-    {
+    for (int i = 0; i < n - 1; i++){
         int key = arr[i+1];
         int j=i;
         
@@ -44,8 +38,7 @@ void insertionSort(int *arr, int n)
     printf("Total no of comparisons are:%d\n",comp);
     printf("Total number of shift are:%d\n",shift);
 }
-int main()
-{
+int main(){
     int arr[100], n, key,t;
     printf("Enter test Cases:\n");
     scanf("%d", &t);
@@ -56,8 +49,5 @@ int main()
         input(arr, n);
         insertionSort(arr,n);
     }
-    
-    
-
     return 0;
 }
