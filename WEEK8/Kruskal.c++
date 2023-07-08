@@ -37,7 +37,7 @@ void unionSet(int rank[],int parent[],int u,int v){
     }
 }
 bool cmp(vector<int> a,vector<int> b){
-    return a[2]>b[2];
+    return a[2]<b[2];
 }
 int kruskalAlgo(int graph[MAX][MAX],int numCity){
     int parent[numCity]={-1},rank[numCity]={0},minWeight=0;
